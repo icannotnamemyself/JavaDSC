@@ -1,29 +1,16 @@
-package xyz.theo;
+package xyz.theoye;
 
+import java.util.Arrays;
 
-public class ArrayList<E> {
-	/**
-	 * 接口设计:
-◼ int size(); // 元素的数量
-◼ boolean isEmpty(); // 是否为空
-◼ boolean contains(E element); // 是否包含某个元素
-◼ void add(E element); // 添加元素到最后面
-◼ E get(int index); // 返回index位置对应的元素
-◼ E set(int index, E element); // 设置index位置的元素
-◼ void add(int index, E element); // 往index位置添加元素
-◼ E remove(int index); // 删除index位置对应的元素
-◼ int indexOf(E element); // 查看元素的位置
-◼ void clear(); // 清除所有
-	 * 
-	 */
+public class ArrayList<E> extends AbstractList<E> implements List<E>{
 	private static final int DEFAULT_CAPACITY = 10;
-	private static final int ELEMENT_NOT_FOUND = -1;
+
 	
 	private int capacity;
-	private int size = 0;
+
 	private E[] elems;
 	
-	int indexOf(E element) // 查看元素的位置
+	public int indexOf(E element) // 查看元素的位置
 	{
 		if(element == null) {
 			// 找null
@@ -39,15 +26,12 @@ public class ArrayList<E> {
 					return i;
 			}
 		}
-	
-		
 		return ELEMENT_NOT_FOUND;
 	}
 	public ArrayList(int capacity) {
 		this.capacity = (capacity < DEFAULT_CAPACITY)?DEFAULT_CAPACITY:capacity;
 
 		elems =  (E[]) new Object[this.capacity];
-
 	}
 	
 	
@@ -79,6 +63,25 @@ public class ArrayList<E> {
 		return elem;
 	}
 	
+	/**
+	 * 扩容
+	 */
+	public void ensureCapacity() {
+		if(size == capacity) {
+			int newCapacity = capacity<<1;
+			System.out.println(capacity + "扩容为" + newCapacity);
+			
+			// 复制数组
+			E[] newElems = (E[])(new Object[newCapacity]);
+			for(int i= 0; i < size ; i++) {
+				System.out.println(size);
+				newElems[i] = elems[i];
+			}
+			elems = newElems;
+			capacity = newCapacity;
+		}
+	}
+	
 	/***
 	 * 在指定位置添加元素
 	 * @param index
@@ -88,6 +91,7 @@ public class ArrayList<E> {
 		checkIndex(index);
 		checkForAdd(size);
 
+//		ensureCapacity();
 		
 		for(int i = size; i >index; i--)
 		{
@@ -116,6 +120,9 @@ public class ArrayList<E> {
 		
 		size--;
 		elems[size]=null;   //最后一个元素与倒数第二个元素都指向 一个对象, 因此将最后一个对象置空 
+		
+		
+		trim();
 		return elem;
 	}
 	
@@ -140,22 +147,6 @@ public class ArrayList<E> {
 		return elems[index];
 	}
 
-	/**
-	 * 返回元素个数
-	 * @return
-	 */
-	public int size() {
-		return size ;
-	}
-	
-	
-	/**
-	 * 是否为空
-	 * @return
-	 */
-	public boolean isEmpty() {
-		return size == 0;
-	}
 	
 	
 	/***
@@ -181,19 +172,42 @@ public class ArrayList<E> {
 	 * @param size
 	 */
 	void checkForAdd(int size) {
-		if( (size + 1 ) >= capacity) {
-			capacity = (int) (capacity*1.5);
-			E[] newElems = (E[])new Object[capacity];
+		
+		if( size  >= capacity) {
+			int newCapacity = (int) (capacity*1.5);
+			E[] newElems = (E[])new Object[newCapacity];
 			
 			for(int i = 0 ; i < size ; i++)
 			{
 				newElems[i]= elems[i]; 
 			}
+			
+			System.out.println(capacity + "扩容为" + newCapacity);
 			elems = newElems;
+			capacity = newCapacity;
 		}
 		
 	}
 	
+	/***
+	 * 缩容
+	 */
+	private void trim() {
+		if(size >= capacity>>1 || size <=DEFAULT_CAPACITY)
+			return;
+		
+		int newCapacity = capacity>>1;
+		E[] newElems = (E[])(new Object[newCapacity]);
+		for(int i= 0; i < size ; i++) {
+			newElems[i] = elems[i];
+		}
+		elems = newElems;
+		System.out.println(capacity+"缩容为"+newCapacity);
+		capacity = newCapacity;
+	}
+
+	
+
 	/**
 	 * toString方法
 	 */
@@ -215,7 +229,4 @@ public class ArrayList<E> {
 		
 		return string.toString();
 	}
-	
-
-	
 }
