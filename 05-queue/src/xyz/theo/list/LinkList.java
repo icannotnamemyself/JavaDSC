@@ -1,10 +1,8 @@
-package xyz.theoye;
+package xyz.theo.list;
 
 
 public class LinkList<E> extends AbstractList<E> implements List<E> {
 
-	/*链表存储大小*/
-	int size = 0;
 	
 	/*第一个元素头指针*/
 	Node<E>first;
@@ -32,7 +30,10 @@ public class LinkList<E> extends AbstractList<E> implements List<E> {
 	}
 
 
-
+	public E getFirst() {
+		return first.element;
+	}
+	
 	@Override
 	public void add(E element) {
 		Node<E> newNode = new Node<E>(last,element, null);
@@ -49,7 +50,16 @@ public class LinkList<E> extends AbstractList<E> implements List<E> {
 	}
 
 
-
+	public void insertFront(E element) {
+		Node<E> newNode = new Node<>(null, element, first);
+		Node nextNode = first.next;
+		
+		nextNode.prev = newNode;
+		newNode.next = first;
+		
+		first= newNode;
+		size++;
+	}
 
 	@Override
 	public E get(int index) {

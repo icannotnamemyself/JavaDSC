@@ -1,4 +1,4 @@
-package Stack;
+package 栈;
 
 import java.util.Stack;
 
@@ -31,7 +31,6 @@ public class _150_逆波兰表达式求值 {
 			}
     		
     	}
-    	
 		return numStack.pop();
     }
 }

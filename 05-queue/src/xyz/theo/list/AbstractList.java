@@ -1,9 +1,9 @@
-package xyz.theoye;
+package xyz.theo.list;
 
 
 public abstract class AbstractList<E> implements List<E> {
 	
- int size = 0;
+ int size;
 	/**
 	 * 返回元素数量
 	 * @return
@@ -29,5 +29,5 @@ public abstract class AbstractList<E> implements List<E> {
 	public boolean contains(E element) {
 		return indexOf(element) != ELEMENT_NOT_FOUND;
 	} // 是否包含某个元素
-
+	public abstract void insertFront(E element);
 }

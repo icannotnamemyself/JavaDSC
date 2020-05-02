@@ -75,7 +75,7 @@ public class Main {
 	}
 
 	private static void testLinkList() {
-		List<Integer> list =new LinkList<Integer>();
+		List<Integer> list =new LinkedList<Integer>();
 		
 		list.add(3);
 		list.add(4);
