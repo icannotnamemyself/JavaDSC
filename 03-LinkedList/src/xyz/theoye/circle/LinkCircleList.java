@@ -8,23 +8,23 @@ import java.util.Comparator;
 import xyz.theoye.AbstractList;
 import xyz.theoye.List;
 /**
- * Ë«ÏòÑ­»·Á´±í
- * @author Ò¶Î°Î°
+ * åŒå‘å¾ªç¯é“¾è¡¨
+ * @author å¶ä¼Ÿä¼Ÿ
  *
  * @param <E>
  */
 public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 
-	/*Á´±í´æ´¢´óĞ¡*/
+	/*é“¾è¡¨å­˜å‚¨å¤§å°*/
 	int size = 0;
 	
-	/*µÚÒ»¸öÔªËØÍ·Ö¸Õë*/
+	/*ç¬¬ä¸€ä¸ªå…ƒç´ å¤´æŒ‡é’ˆ*/
 	Node<E>first;
 	
-	/*×îºóÒ»¸ö½Úµã*/
+	/*æœ€åä¸€ä¸ªèŠ‚ç‚¹*/
 	Node<E>last; 
 
-	/*µ±Ç°Ö¸Õë*/
+	/*å½“å‰æŒ‡é’ˆ*/
 	Node<E> current;
 	
 	
@@ -34,10 +34,10 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 	}
 	
 	public static class Node<E>{
-		/*Ö¸ÏòÇ°Ò»¸ö½Úµã*/
+		/*æŒ‡å‘å‰ä¸€ä¸ªèŠ‚ç‚¹*/
 		Node<E> prev;
 		
-		/*Ö¸ÏòÏÂÒ»¸ö½Úµã*/
+		/*æŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹*/
 		Node<E> next; 
 		E element ; 
 		
@@ -141,11 +141,11 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 			next.prev = prev;
 			
 			if(node == first) {
-				/*É¾³ıµÄÊÇµÚÒ»¸ö½Úµã*/
+				/*åˆ é™¤çš„æ˜¯ç¬¬ä¸€ä¸ªèŠ‚ç‚¹*/
 				first = next;
 			}
 			if(node == last) {
-				/*É¾³ıµÄÊÇ×îºóÒ»¸ö½Úµã*/
+				/*åˆ é™¤çš„æ˜¯æœ€åä¸€ä¸ªèŠ‚ç‚¹*/
 				last = prev;
 			}
 		}
@@ -163,7 +163,7 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 	public int indexOf(E element) {
 		Node<E> node = first; 
 		
-		/*Èç¹ûÊäÈë¿Õ¾ÍÕÒ¿Õ*/
+		/*å¦‚æœè¾“å…¥ç©ºå°±æ‰¾ç©º*/
 		if(element == null) {   //
 			for(int i = 0;  i < size; i++)
 			{
@@ -173,7 +173,7 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 				}
 			}
 		}
-		/*Èç¹ûÊäÈë·Ç¿Õ¾ÍÕÒ¸ÄÔªËØ*/
+		/*å¦‚æœè¾“å…¥éç©ºå°±æ‰¾æ”¹å…ƒç´ */
 		else {
 			for(int i = 0;  i < size; i++)
 			{
@@ -184,7 +184,7 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 			}
 		}
 		
-		/*ÕÒ²»µ½·µ»ØELEMENT_NOT_FOUND*/
+		/*æ‰¾ä¸åˆ°è¿”å›ELEMENT_NOT_FOUND*/
 		return ELEMENT_NOT_FOUND;
 	}
 
@@ -196,19 +196,19 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 		
 		size = 0 ;
 		/*
-		 * ËäÈ»ÓĞÑ­»·ÒıÓÃ, µ«ÊÇ²»ÊÇgcroot¶ÔÏó
+		 * è™½ç„¶æœ‰å¾ªç¯å¼•ç”¨, ä½†æ˜¯ä¸æ˜¯gcrootå¯¹è±¡
 		 * gcroot
 		 * 
-		 * Èç: ±»Õ»Ö¸ÕëÖ¸ÏòµÄ¶ÔÏó
+		 * å¦‚: è¢«æ ˆæŒ‡é’ˆæŒ‡å‘çš„å¯¹è±¡
 		 */
 		
-		/*µÚÒ»¸öºÍ×îºóÒ»¸öÃ»ÁË, ÆäËû×Ô¶¯Ã»ÁË*/
+		/*ç¬¬ä¸€ä¸ªå’Œæœ€åä¸€ä¸ªæ²¡äº†, å…¶ä»–è‡ªåŠ¨æ²¡äº†*/
 		first = null;  
 		last = null;
 		
 	}
 	/**
-	 * Ñ°ÕÒ¸ù¾İindexÑ°ÕÒ½Úµã
+	 * å¯»æ‰¾æ ¹æ®indexå¯»æ‰¾èŠ‚ç‚¹
 	 * @param index
 	 * @return
 	 */
@@ -237,32 +237,32 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 	}
 	
 	/**
-	 * ½«ÔªËØ²åÈëµ½ÓĞĞòÁĞ±íÖĞ, ÕâÀïµÄelement ¼´²åÈëµÄX
+	 * å°†å…ƒç´ æ’å…¥åˆ°æœ‰åºåˆ—è¡¨ä¸­, è¿™é‡Œçš„element å³æ’å…¥çš„X
 	 * @param element
 	 * @param comparator
 	 */
 	public void insert(E element, Comparator<E> comparator) {
 		
-		Node<E> node = first;   //»ñÈ¡Í·½Úµã
+		Node<E> node = first;   //è·å–å¤´èŠ‚ç‚¹
 		
 		while(node!=null &&comparator.compare(element, node.element) >= 0) 
 			node = node.next;
 		
 		
-		//Èç¹ûÃ»ÕÒµ½±È¸Ãnode´óµÄÔªËØ¾ÍÖ±½ÓÌí¼Óµ½×îºóÃæ, È»ºó·µ»Ø
+		//å¦‚æœæ²¡æ‰¾åˆ°æ¯”è¯¥nodeå¤§çš„å…ƒç´ å°±ç›´æ¥æ·»åŠ åˆ°æœ€åé¢, ç„¶åè¿”å›
 		if(node == null) {
 			add(element);
 			return ;
 		}
 		
 		
-		//·ñÔò¾ÍÊ¹ÓÃ¸ÃÔªËØÉú³ÉĞÂ½Úµã²åÈëµ½¸Ã½ÚµãÖ®Ç°
+		//å¦åˆ™å°±ä½¿ç”¨è¯¥å…ƒç´ ç”Ÿæˆæ–°èŠ‚ç‚¹æ’å…¥åˆ°è¯¥èŠ‚ç‚¹ä¹‹å‰
 		insertBefore(element, node);
 		size++;
 	}
 	
 	/**
-	 * ½«element²åÈëµ½nodeÖ®Ç° 
+	 * å°†elementæ’å…¥åˆ°nodeä¹‹å‰ 
 	 * @param element
 	 * @param node
 	 */
@@ -277,7 +277,7 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 	}
 	
 	/**
-	 * ÕÒµ½·ûºÏÌõ¼şµÄµÚÒ»¸öÔªËØ²¢ÇÒÉ¾³ı
+	 * æ‰¾åˆ°ç¬¦åˆæ¡ä»¶çš„ç¬¬ä¸€ä¸ªå…ƒç´ å¹¶ä¸”åˆ é™¤
 	 * @param element
 	 * @throws Exception
 	 */
@@ -290,23 +290,23 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 			node = node.next;
 		}
 		
-		//Ã»ÕÒµ½¾ÍÅ×³öÒì³£
+		//æ²¡æ‰¾åˆ°å°±æŠ›å‡ºå¼‚å¸¸
 		if(node == null) {
 			throw new Exception("Element Not Found");
 		}
 		
-		//ÕÒµ½ÔòÉ¾³ıµ¯³ö
+		//æ‰¾åˆ°åˆ™åˆ é™¤å¼¹å‡º
 		E oldE = node.element;
 		
 		Node<E> prev = node.prev;
 		
 		prev.next = node.next;
 		node.next = prev;
-		//ÓÉjava GC À´´¦ÀíÀ¬»ø
+		//ç”±java GC æ¥å¤„ç†åƒåœ¾
 	}
 	
 	/**
-	 * toString·½·¨
+	 * toStringæ–¹æ³•
 	 */
 	@Override
 	public String toString() {

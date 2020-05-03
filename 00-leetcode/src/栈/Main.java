@@ -1,4 +1,4 @@
-package ջ;
+package 栈;
 
 
 public class Main {

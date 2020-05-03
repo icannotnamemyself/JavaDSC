@@ -1,17 +1,17 @@
-package linkedList.¿ìÂıÖ¸Õë;
+package linkedList.å¿«æ…¢æŒ‡é’ˆ;
 
 import linkedList.ListNode;
 /**
  * https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/chao-jian-ji-shuang-zhi-zhen-fu-tu-jie-by-newpp/
- * @author Ò¶Î°Î°
+ * @author å¶ä¼Ÿä¼Ÿ
  *
  */
-public class _19_É¾³ıÁ´±íµÄµ¹ÊıµÚN¸ö½Úµã {
+public class _19_åˆ é™¤é“¾è¡¨çš„å€’æ•°ç¬¬Nä¸ªèŠ‚ç‚¹ {
     public ListNode removeNthFromEnd(ListNode head, int n) {
     	ListNode fastNode= head;
     	ListNode slowNode = head;
     	while(n!=0) {
-    		fastNode = fastNode.next;  // ÏòÇ°ÒÆ¶¯
+    		fastNode = fastNode.next;  // å‘å‰ç§»åŠ¨
     		n--;
     	}
     	if(fastNode == null) {

@@ -5,7 +5,7 @@ public abstract class AbstractList<E> implements List<E> {
 	
  int size = 0;
 	/**
-	 * 返回元素数量
+	 * 杩斿洖鍏冪礌鏁伴噺
 	 * @return
 	 */
 	public int size() {
@@ -14,20 +14,20 @@ public abstract class AbstractList<E> implements List<E> {
 	}; 
 	
 	/**
-	 * 是否为空
+	 * 鏄惁涓虹┖
 	 * @return
 	 */
 	public boolean isEmpty() {
 		return size==0;
-	} // 是否为空
+	} // 鏄惁涓虹┖
 	
 	/**
-	 * 是否包含某一元素
+	 * 鏄惁鍖呭惈鏌愪竴鍏冪礌
 	 * @param element
 	 * @return
 	 */
 	public boolean contains(E element) {
 		return indexOf(element) != ELEMENT_NOT_FOUND;
-	} // 是否包含某个元素
+	} // 鏄惁鍖呭惈鏌愪釜鍏冪礌
 
 }

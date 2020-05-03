@@ -2,10 +2,10 @@ package xyz.theoye;
 
 public class ForwardList<E> extends AbstractList<E> implements List<E> {
 
-	/*Á´±í´æ´¢´óĞ¡*/
+	/*é“¾è¡¨å­˜å‚¨å¤§å°*/
 	protected int size = 0;
 	
-	/*µÚÒ»¸öÔªËØÍ·Ö¸Õë*/
+	/*ç¬¬ä¸€ä¸ªå…ƒç´ å¤´æŒ‡é’ˆ*/
 	Node<E>first;
 	
 	private static class Node<E>{
@@ -98,7 +98,7 @@ public class ForwardList<E> extends AbstractList<E> implements List<E> {
 	public int indexOf(E element) {
 		Node<E> node = first; 
 		
-		/*Èç¹ûÊäÈë¿Õ¾ÍÕÒ¿Õ*/
+		/*å¦‚æœè¾“å…¥ç©ºå°±æ‰¾ç©º*/
 		if(element == null) {   //
 			for(int i = 0;  i < size; i++)
 			{
@@ -108,7 +108,7 @@ public class ForwardList<E> extends AbstractList<E> implements List<E> {
 				}
 			}
 		}
-		/*Èç¹ûÊäÈë·Ç¿Õ¾ÍÕÒ¸ÄÔªËØ*/
+		/*å¦‚æœè¾“å…¥éç©ºå°±æ‰¾æ”¹å…ƒç´ */
 		else {
 			for(int i = 0;  i < size; i++)
 			{
@@ -119,7 +119,7 @@ public class ForwardList<E> extends AbstractList<E> implements List<E> {
 			}
 		}
 		
-		/*ÕÒ²»µ½·µ»ØELEMENT_NOT_FOUND*/
+		/*æ‰¾ä¸åˆ°è¿”å›ELEMENT_NOT_FOUND*/
 		return ELEMENT_NOT_FOUND;
 	}
 
@@ -131,7 +131,7 @@ public class ForwardList<E> extends AbstractList<E> implements List<E> {
 		
 		size = 0 ;
 		
-		/*µÚÒ»¸öÃ»ÁË, ÆäËû×Ô¶¯Ã»ÁË*/
+		/*ç¬¬ä¸€ä¸ªæ²¡äº†, å…¶ä»–è‡ªåŠ¨æ²¡äº†*/
 		first = null;  
 	}
 	
@@ -156,7 +156,7 @@ public class ForwardList<E> extends AbstractList<E> implements List<E> {
 	
 	
 	/**
-	 * toString·½·¨
+	 * toStringæ–¹æ³•
 	 */
 	@Override
 	public String toString() {

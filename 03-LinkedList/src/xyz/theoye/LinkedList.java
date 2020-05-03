@@ -6,10 +6,10 @@ import java.util.Comparator;
 public class LinkedList<E> extends AbstractList<E> implements List<E> {
 
 	
-	/*µÚÒ»¸öÔªËØÍ·Ö¸Õë*/
+	/*ç¬¬ä¸€ä¸ªå…ƒç´ å¤´æŒ‡é’ˆ*/
 	Node<E>first;
 	
-	/*×îºóÒ»¸ö½Úµã*/
+	/*æœ€åä¸€ä¸ªèŠ‚ç‚¹*/
 	Node<E>last; 
 
 	
@@ -17,10 +17,10 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 		first = last = null;
 	}
 	private static class Node<E>{
-		/*Ö¸ÏòÇ°Ò»¸ö½Úµã*/
+		/*æŒ‡å‘å‰ä¸€ä¸ªèŠ‚ç‚¹*/
 		Node<E> prev;
 		
-		/*Ö¸ÏòÏÂÒ»¸ö½Úµã*/
+		/*æŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹*/
 		Node<E> next; 
 		E element ; 
 		
@@ -128,7 +128,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 	public int indexOf(E element) {
 		Node<E> node = first; 
 		
-		/*Èç¹ûÊäÈë¿Õ¾ÍÕÒ¿Õ*/
+		/*å¦‚æœè¾“å…¥ç©ºå°±æ‰¾ç©º*/
 		if(element == null) {   //
 			for(int i = 0;  i < size; i++)
 			{
@@ -138,7 +138,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 				}
 			}
 		}
-		/*Èç¹ûÊäÈë·Ç¿Õ¾ÍÕÒ¸ÄÔªËØ*/
+		/*å¦‚æœè¾“å…¥éç©ºå°±æ‰¾æ”¹å…ƒç´ */
 		else {
 			for(int i = 0;  i < size; i++)
 			{
@@ -149,7 +149,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 			}
 		}
 		
-		/*ÕÒ²»µ½·µ»ØELEMENT_NOT_FOUND*/
+		/*æ‰¾ä¸åˆ°è¿”å›ELEMENT_NOT_FOUND*/
 		return ELEMENT_NOT_FOUND;
 	}
 
@@ -161,13 +161,13 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 		
 		size = 0 ;
 		/*
-		 * ËäÈ»ÓĞÑ­»·ÒıÓÃ, µ«ÊÇ²»ÊÇgcroot¶ÔÏó
+		 * è™½ç„¶æœ‰å¾ªç¯å¼•ç”¨, ä½†æ˜¯ä¸æ˜¯gcrootå¯¹è±¡
 		 * gcroot
 		 * 
-		 * Èç: ±»Õ»Ö¸ÕëÖ¸ÏòµÄ¶ÔÏó
+		 * å¦‚: è¢«æ ˆæŒ‡é’ˆæŒ‡å‘çš„å¯¹è±¡
 		 */
 		
-		/*µÚÒ»¸öºÍ×îºóÒ»¸öÃ»ÁË, ÆäËû×Ô¶¯Ã»ÁË*/
+		/*ç¬¬ä¸€ä¸ªå’Œæœ€åä¸€ä¸ªæ²¡äº†, å…¶ä»–è‡ªåŠ¨æ²¡äº†*/
 		first = null;  
 		last = null;
 		
@@ -206,7 +206,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 	
 	
 	/**
-	 * toString·½·¨
+	 * toStringæ–¹æ³•
 	 */
 	@Override
 	public String toString() {

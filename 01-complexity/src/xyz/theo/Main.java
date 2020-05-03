@@ -8,20 +8,20 @@ public class Main {
 	// fib(n) = fib(n - 1) + fib(n - 2)
 	
 	/**
-	 * µİ¹é°æ±¾
-	 * Ê±¼ä¸´ÔÓ¶È: 2^n
-	 * 1. ´æÔÚĞÔÄÜÎÊÌâ
+	 * é€’å½’ç‰ˆæœ¬
+	 * æ—¶é—´å¤æ‚åº¦: 2^n
+	 * 1. å­˜åœ¨æ€§èƒ½é—®é¢˜
 	 * 
 	 * @param n
 	 * @return
 	 */
 	public  static int  fib1(int n) {
-		if(n <= 1) return n;   // ´«0 ·µ»Ø0 , ´«1 ·µ»Ø1
+		if(n <= 1) return n;   // ä¼ 0 è¿”å›0 , ä¼ 1 è¿”å›1
 		return fib1(n - 1) + fib1(n - 2);
 	}
 	/**
-	 * µü´ú°æ±¾
-	 * Ê±¼ä¸´ÔÓ¶È: n
+	 * è¿­ä»£ç‰ˆæœ¬
+	 * æ—¶é—´å¤æ‚åº¦: n
 	 * 
 	 * @param args
 	 */
@@ -31,7 +31,7 @@ public class Main {
 		}
 		int first = 0;
 		int second = 1;
-		int sum = 0; // ÖĞ¼äÖµ
+		int sum = 0; // ä¸­é—´å€¼
 		for(int i=0; i<n-1;i++) {
 			sum = second + first;
 			first = second;

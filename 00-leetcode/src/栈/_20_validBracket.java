@@ -1,14 +1,13 @@
-package Õ»;
+package æ ˆ;
 
 import java.util.HashMap;
 import java.util.Stack;
 /**
  * https://leetcode-cn.com/problems/valid-parentheses/submissions/
- * Ê¹ÓÃÕ»ºÍmap À´ÊµÏÖ×óÓÒÀ¨ºÅµÄÆ¥Åä
- * @author Ò¶Î°Î°
+ * @author å¶ä¼Ÿä¼Ÿ
  *
  */
-public class _20_ÓĞĞ§µÄÀ¨ºÅ {
+public class _20_validBracket{
 	
 	public static HashMap<Character, Character> hashMap= new HashMap<>();
 	
@@ -31,7 +30,6 @@ public class _20_ÓĞĞ§µÄÀ¨ºÅ {
         		if (stack.size() == 0 ) 
 					return false;
         		char left = stack.pop();
-        		//À¨ºÅ²»Æ¥Åä
         		if(hashMap.get(left) != c) 
         			return false;
         	}

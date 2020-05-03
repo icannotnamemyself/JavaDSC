@@ -25,9 +25,9 @@ public class CircleQueue<E> {
 	
 	/**
 	 * 
-	 *	×ö  Âß¼­Ë÷Òıµ½ ÄÚ´æË÷Òı µÄÓ³Éä 
-	 * @param index Âß¼­Ë÷Òı
-	 * @return   Âß¼­Ë÷Òı¶ÔÓ¦µÄÄÚ´æË÷Òı
+	 *	åš  é€»è¾‘ç´¢å¼•åˆ° å†…å­˜ç´¢å¼• çš„æ˜ å°„ 
+	 * @param index é€»è¾‘ç´¢å¼•
+	 * @return   é€»è¾‘ç´¢å¼•å¯¹åº”çš„å†…å­˜ç´¢å¼•
 	 */
 	private int index(int index) {
 		index += front;
@@ -41,7 +41,7 @@ public class CircleQueue<E> {
 	}
 	
 	/**
-	 * Èç¹û¼´½«³¬³öÈİÁ¿·¶Î§ÔòÀ©Èİ
+	 * å¦‚æœå³å°†è¶…å‡ºå®¹é‡èŒƒå›´åˆ™æ‰©å®¹
 	 * @param size
 	 */
 	private void ensureCapacity(int size) {
@@ -65,7 +65,7 @@ public class CircleQueue<E> {
 		
 		 elements[front] = null;
 		
-		/*¸üĞÂfront*/
+		/*æ›´æ–°front*/
 		front = index(1);
 		size--;
 		return oldE;

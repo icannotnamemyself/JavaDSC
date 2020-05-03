@@ -1,6 +1,6 @@
 package linkedList;
 
-public class _21_合并两个有序链表 {
+public class _21_鍚堝苟涓や釜鏈夊簭閾捐〃 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     	
     	while(l1 !=null && l2!=null) {
@@ -19,7 +19,7 @@ public class _21_合并两个有序链表 {
 		return l1;
     }
     /**
-     * 将节点l1 unlink, 插入节点l2后面
+     * 灏嗚妭鐐筶1 unlink, 鎻掑叆鑺傜偣l2鍚庨潰
      * 
      * @param l1
      * @param l2

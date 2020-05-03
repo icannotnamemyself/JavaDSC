@@ -1,8 +1,8 @@
-package Õ»;
+package æ ˆ;
 
 import java.util.Stack;
 
-public class _150_Äæ²¨À¼±í´ïÊ½ÇóÖµ {
+public class _150_RPN{
     public int evalRPN(String[] tokens) {
     	
     	Stack<Integer> numStack = new Stack<Integer>();

@@ -1,15 +1,15 @@
-package linkedList.¿ìÂıÖ¸Õë;
+package linkedList.å¿«æ…¢æŒ‡é’ˆ;
 
 import linkedList.ListNode;
 
 /**
  * https://leetcode-cn.com/problems/linked-list-cycle/
- * @author Ò¶Î°Î°
+ * @author å¶ä¼Ÿä¼Ÿ
  *
  */
-public class _141_»·ĞÎÁ´±í {
+public class _141_ç¯å½¢é“¾è¡¨ {
 	/**
-	 * Ê¹ÓÃ¿ìÂıÖ¸ÕëµÄË¼Ïë
+	 * ä½¿ç”¨å¿«æ…¢æŒ‡é’ˆçš„æ€æƒ³
 	 */
     public boolean hasCycle(ListNode head) {
     	if(head == null || head.next ==null) return false;

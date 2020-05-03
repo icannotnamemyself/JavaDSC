@@ -1,2 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/module-info.java=UTF-8
+encoding//src/xyz/theo/DeQueue.java=UTF-8
+encoding//src/xyz/theo/Main.java=UTF-8
+encoding//src/xyz/theo/Queue.java=UTF-8
+encoding//src/xyz/theo/circle/CircleDequeue.java=UTF-8
+encoding//src/xyz/theo/circle/CircleQueue.java=UTF-8
+encoding//src/xyz/theo/list/AbstractList.java=UTF-8
+encoding//src/xyz/theo/list/LinkList.java=UTF-8
 encoding//src/xyz/theo/list/List.java=UTF-8

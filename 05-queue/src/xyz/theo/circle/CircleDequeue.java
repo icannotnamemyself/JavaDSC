@@ -3,8 +3,8 @@ package xyz.theo.circle;
 import xyz.theo.list.LinkList;
 
 /**
- * Ê¹ÓÃ¶¯Ì¬Êı×éÊµÏÖ circleDequeue
- * @author Ò¶Î°Î°
+ * ä½¿ç”¨åŠ¨æ€æ•°ç»„å®ç° circleDequeue
+ * @author å¶ä¼Ÿä¼Ÿ
  *
  */
 public class CircleDequeue<E> {
@@ -40,7 +40,7 @@ public class CircleDequeue<E> {
 	}
 	
 	/**
-	 * Ìí¼Óµ½¶ÓÎ²
+	 * æ·»åŠ åˆ°é˜Ÿå°¾
 	 * @param element
 	 */
 	public void enQueueRear(E element) {
@@ -50,9 +50,9 @@ public class CircleDequeue<E> {
 	}
 	
 	/**
-	 * Ë÷ÒıÓ³Éä
+	 * ç´¢å¼•æ˜ å°„
 	 * @param index
-	 * @return ÕæÊµË÷Òı
+	 * @return çœŸå®ç´¢å¼•
 	 */
 	private int index(int index) {
 		index += front; 
@@ -63,12 +63,12 @@ public class CircleDequeue<E> {
 	}
 	
 	/**
-	 * µ¯³ö¶ÓÍ·ÔªËØ
+	 * å¼¹å‡ºé˜Ÿå¤´å…ƒç´ 
 	 * @return
 	 */
 	public E deQueueFront() {
 		E frontE = elements[index(0)];
-		/*front ÏòÇ°ÒÆ¶¯*/
+		/*front å‘å‰ç§»åŠ¨*/
 		 elements[index(0)] = null;
 		front = index(1); 
 		size--;
@@ -76,7 +76,7 @@ public class CircleDequeue<E> {
 	}
 	
 	/**
-	 * µ¯³ö¶ÓÎ²ÔªËØ
+	 * å¼¹å‡ºé˜Ÿå°¾å…ƒç´ 
 	 * @return
 	 */
 	public E deQueueRear() {
@@ -87,7 +87,7 @@ public class CircleDequeue<E> {
 	}
 	
 	/**
-	 * Ìí¼Ó¶ÓÍ·ÔªËØ
+	 * æ·»åŠ é˜Ÿå¤´å…ƒç´ 
 	 * @param element
 	 */
 	public void enQueueFront(E element) {

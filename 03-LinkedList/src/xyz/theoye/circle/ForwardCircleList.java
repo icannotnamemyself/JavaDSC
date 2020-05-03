@@ -7,10 +7,10 @@ import xyz.theoye.List;
 
 public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 
-	/*Á´±í´æ´¢´óĞ¡*/
+	/*é“¾è¡¨å­˜å‚¨å¤§å°*/
 	protected int size = 0;
 	
-	/*µÚÒ»¸öÔªËØÍ·Ö¸Õë*/
+	/*ç¬¬ä¸€ä¸ªå…ƒç´ å¤´æŒ‡é’ˆ*/
 	Node<E>first;
 	
 	public static class Node<E>{
@@ -112,15 +112,15 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 	}
 
 	/**
-	 * µ¥ÏòÑ­»·Á´±í 
+	 * å•å‘å¾ªç¯é“¾è¡¨ 
 	 * @return
 	 */
 	public E pop_back() {
-		Node<E>last =  findNode(size -1);  //ÕÒµ½×îºóÒ»¸ö½Úµã
-		Node<E> prev = findNode(size - 2); // ÕÒµ½µ¹ÊıµÚ¶ş¸ö½Úµã
-		E oldE = last.element;  //±£´æÊı¾İ   
+		Node<E>last =  findNode(size -1);  //æ‰¾åˆ°æœ€åä¸€ä¸ªèŠ‚ç‚¹
+		Node<E> prev = findNode(size - 2); // æ‰¾åˆ°å€’æ•°ç¬¬äºŒä¸ªèŠ‚ç‚¹
+		E oldE = last.element;  //ä¿å­˜æ•°æ®   
 		
-		prev.next = last.next;  // µ¹ÊıµÚ¶ş¸ö½ÚµãÖ¸ÏòµÚÒ»¸ö½Úµã
+		prev.next = last.next;  // å€’æ•°ç¬¬äºŒä¸ªèŠ‚ç‚¹æŒ‡å‘ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 		
 		
 		size--;  
@@ -135,7 +135,7 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 	public int indexOf(E element) {
 		Node<E> node = first; 
 		
-		/*Èç¹ûÊäÈë¿Õ¾ÍÕÒ¿Õ*/
+		/*å¦‚æœè¾“å…¥ç©ºå°±æ‰¾ç©º*/
 		if(element == null) {   //
 			for(int i = 0;  i < size; i++)
 			{
@@ -145,7 +145,7 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 				}
 			}
 		}
-		/*Èç¹ûÊäÈë·Ç¿Õ¾ÍÕÒ¸ÄÔªËØ*/
+		/*å¦‚æœè¾“å…¥éç©ºå°±æ‰¾æ”¹å…ƒç´ */
 		else {
 			for(int i = 0;  i < size; i++)
 			{
@@ -156,7 +156,7 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 			}
 		}
 		
-		/*ÕÒ²»µ½·µ»ØELEMENT_NOT_FOUND*/
+		/*æ‰¾ä¸åˆ°è¿”å›ELEMENT_NOT_FOUND*/
 		return ELEMENT_NOT_FOUND;
 	}
 
@@ -168,7 +168,7 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 		
 		size = 0 ;
 		
-		/*µÚÒ»¸öÃ»ÁË, ÆäËû×Ô¶¯Ã»ÁË*/
+		/*ç¬¬ä¸€ä¸ªæ²¡äº†, å…¶ä»–è‡ªåŠ¨æ²¡äº†*/
 		first = null;  
 	}
 	
@@ -193,7 +193,7 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 	
 	
 	/**
-	 * toString·½·¨
+	 * toStringæ–¹æ³•
 	 */
 	@Override
 	public String toString() {

@@ -1,17 +1,13 @@
 package linkedList;
 
 
-public class _206_·´×ªÁ´±í {
+public class _206_reverseLinkedList {
 //	  public class ListNode {
 //	      int val;
 //	      ListNode next;
 //	      ListNode(int x) { val = x; }
 //	 }
-	/**
-	 * µÝ¹é°æ±¾
-	 * @param head
-	 * @return
-	 */
+
     public ListNode reverseList1(ListNode head) {
     	if(head==null || head.next ==null) return head;
     	ListNode newHead = reverseList(head.next);
@@ -21,7 +17,7 @@ public class _206_·´×ªÁ´±í {
     }
     
     /**
-     * µü´ú°æ±¾
+     * é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”ŸèŠ¥æœ¬
      * @param head
      * @return
      */

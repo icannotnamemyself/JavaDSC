@@ -1,3 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/module-info.java=UTF-8
+encoding//src/xyz/theoye/AbstractList.java=UTF-8
 encoding//src/xyz/theoye/ArrayList.java=UTF-8
+encoding//src/xyz/theoye/ForwardList.java=UTF-8
+encoding//src/xyz/theoye/LinkedList.java=UTF-8
 encoding//src/xyz/theoye/List.java=UTF-8
+encoding//src/xyz/theoye/Main.java=UTF-8
+encoding//src/xyz/theoye/circle/ForwardCircleList.java=UTF-8
+encoding//src/xyz/theoye/circle/LinkCircleList.java=UTF-8

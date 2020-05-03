@@ -13,7 +13,6 @@ public class Main {
 			public int compare(Integer o1, Integer o2) {
 				return o1 - o2;
 			}
-			
 		}); 
 
 		
@@ -22,11 +21,20 @@ public class Main {
 			bst.add(i);
 		}
 		
-		for(int i = 0 ; i < 10; i+=2) {
+		for(int i = -6 ; i < 10; i+=2) {
 			bst.add(i);
 		}
 		
+		bst.levelOrderTraversal(new BinarySearchTree.Visitor<Integer>() {
+			@Override
+			public boolean visit(Integer element) {
+				System.out.println(element);
+				return element.equals(9)?true:false; 
+			}
+		});
 		BinaryTrees.println(bst);
+		
+		System.out.println(bst.height());
 	}
 
 }

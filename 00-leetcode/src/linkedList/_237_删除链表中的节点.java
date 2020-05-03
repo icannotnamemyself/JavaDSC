@@ -2,10 +2,10 @@ package linkedList;
 
 /**
  * https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
- * @author Ҷΰΰ
+ * @author 叶伟伟
  *
  */
-public class _237_ɾ�������еĽڵ� {
+public class _237_删除链表中的节点 {
 	  public class ListNode {
 	      int val;
 	      ListNode next;
