@@ -2,6 +2,9 @@ package xyz.theoye.circle;
 
 
 
+import java.util.Comparator;
+
+
 import xyz.theoye.AbstractList;
 import xyz.theoye.List;
 /**
@@ -122,11 +125,8 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 
 	@Override
 	public E remove(int index) {
-		
 		rangeCheck(index);
 		E old = null;
-
-		
 		if(size == 1) {
 			old = first.element;
 			first = null;
@@ -148,15 +148,16 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 				/*删除的是最后一个节点*/
 				last = prev;
 			}
-			
-			
 		}
 		size--;
 		return old;
 	}
 
 
-
+	public void insert(int element) {
+		
+	}
+	
 
 	@Override
 	public int indexOf(E element) {
@@ -206,7 +207,11 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 		last = null;
 		
 	}
-	
+	/**
+	 * 寻找根据index寻找节点
+	 * @param index
+	 * @return
+	 */
 	private Node<E> findNode(int index) {
 		rangeCheck(index);
 		Node<E>node = null; 
@@ -222,12 +227,8 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 			for(int i = 0 ; i>size-index-1;i++) {
 				node = node.prev;
 		}
-		
-		
-		
 	}
 		return node;
-	
 	}
 	private void rangeCheck(int index) {
 		if(index<0 || index>=size) {
@@ -235,8 +236,74 @@ public class LinkCircleList<E> extends AbstractList<E> implements List<E> {
 		}
 	}
 	
+	/**
+	 * 将元素插入到有序列表中, 这里的element 即插入的X
+	 * @param element
+	 * @param comparator
+	 */
+	public void insert(E element, Comparator<E> comparator) {
+		
+		Node<E> node = first;   //获取头节点
+		
+		while(node!=null &&comparator.compare(element, node.element) >= 0) 
+			node = node.next;
+		
+		
+		//如果没找到比该node大的元素就直接添加到最后面, 然后返回
+		if(node == null) {
+			add(element);
+			return ;
+		}
+		
+		
+		//否则就使用该元素生成新节点插入到该节点之前
+		insertBefore(element, node);
+		size++;
+	}
 	
+	/**
+	 * 将element插入到node之前 
+	 * @param element
+	 * @param node
+	 */
+	private void insertBefore(E element, Node<E> node) {
+		Node<E> newNode = new Node<>(node.prev, element, node); 
+		
+		Node<E>prev = node.prev;
+		
+		prev.next = newNode;
+		node.prev = newNode;
+
+	}
 	
+	/**
+	 * 找到符合条件的第一个元素并且删除
+	 * @param element
+	 * @throws Exception
+	 */
+	public void findAndDelete(E element) throws Exception {
+		Node<E> node = first;
+		
+		while(node !=null) {
+			if(element.equals(node.element))
+				break;
+			node = node.next;
+		}
+		
+		//没找到就抛出异常
+		if(node == null) {
+			throw new Exception("Element Not Found");
+		}
+		
+		//找到则删除弹出
+		E oldE = node.element;
+		
+		Node<E> prev = node.prev;
+		
+		prev.next = node.next;
+		node.next = prev;
+		//由java GC 来处理垃圾
+	}
 	
 	/**
 	 * toString方法

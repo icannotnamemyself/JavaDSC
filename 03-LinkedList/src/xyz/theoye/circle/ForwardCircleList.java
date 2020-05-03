@@ -111,9 +111,26 @@ public class ForwardCircleList<E> extends AbstractList<E> implements List<E> {
 		return oldE;
 	}
 
+	/**
+	 * 单向循环链表 
+	 * @return
+	 */
+	public E pop_back() {
+		Node<E>last =  findNode(size -1);  //找到最后一个节点
+		Node<E> prev = findNode(size - 2); // 找到倒数第二个节点
+		E oldE = last.element;  //保存数据   
+		
+		prev.next = last.next;  // 倒数第二个节点指向第一个节点
+		
+		
+		size--;  
+		return oldE;
+	}
 
 
-
+	
+	
+	
 	@Override
 	public int indexOf(E element) {
 		Node<E> node = first; 

@@ -13,8 +13,11 @@ public class Main {
 //		testForwardCircleList();
 //		testLinkCircleList();
 		
-		
+	
 	}
+	
+	
+
 
 	private static void testLinkCircleList() {
 		LinkCircleList<Integer> list = new LinkCircleList<Integer>();

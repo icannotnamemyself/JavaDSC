@@ -1,5 +1,7 @@
 package xyz.theoye;
 
+import java.util.Comparator;
+
 
 public class LinkedList<E> extends AbstractList<E> implements List<E> {
 
@@ -55,7 +57,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 		return node.element;
 	}
 
-
+	
 
 
 	@Override
